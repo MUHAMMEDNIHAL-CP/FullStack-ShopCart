@@ -1,0 +1,24 @@
+.stickyNavbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.responsiveCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .stickyNavbar .input-group {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .responsiveCart {
+    margin-top: 10px;
+  }
+}
