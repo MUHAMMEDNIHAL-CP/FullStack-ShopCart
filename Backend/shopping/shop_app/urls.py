@@ -16,6 +16,7 @@ urlpatterns = [
     path('payment_callback/', views.payment_callback, name='payment_callback'),
     path('initiate_paypal_payment/', views.initiate_paypal_payment, name="initiate_paypal_payment"),
     path('paypal_payment_callback/', views.paypal_payment_callback, name="paypal_payment_callback"),
+    path('register/', views.RegisterPageView.as_view(), name='register'), 
 
 ]
 

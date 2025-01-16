@@ -12,6 +12,9 @@ from django.shortcuts import get_object_or_404
 import requests
 from .models import Transaction
 import paypalrestsdk
+from rest_framework import generics
+from django.contrib.auth import get_user_model
+from rest_framework.permissions import AllowAny
 
 # Create your views here.
 
@@ -108,6 +111,17 @@ def delete_cartitem(request):
 def get_username(request):
     user = request.user
     return Response({"username": user.username})
+
+class RegisterPageView(generics.CreateAPIView):
+    queryset = get_user_model().objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]  # Allow any user to register
+
+    def perform_create(self, serializer):
+        """
+        Override perform_create to handle user registration and related actions.
+        """
+        user = serializer.save()
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])

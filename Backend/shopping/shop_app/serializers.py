@@ -77,12 +77,31 @@ class NewCartItemSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     items = serializers.SerializerMethodField()
+    password = serializers.CharField(write_only=True)  # Password will only be used for creation/updating
+
     class Meta:
         model = get_user_model()
-        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'city', 'state', 'address', 'phone', 'items']
+        fields = ['id', 'username', 'first_name', 'last_name', 'email', 'city', 'state', 'address', 'phone', 'items', 'password']
 
     def get_items(self, user):
         cartitems = CartItem.objects.filter(cart__user=user, cart__paid=True)[:10]
         serializer = NewCartItemSerializer(cartitems, many=True)
         return serializer.data
+
+    def create(self, validated_data):
+        # Ensure the password is hashed before saving
+        password = validated_data.pop('password', None)
+        user = super().create(validated_data)
+        if password:
+            user.set_password(password)
+            user.save()
+        return user
+
+    def update(self, instance, validated_data):
+        password = validated_data.pop('password', None)
+        instance = super().update(instance, validated_data)
+        if password:
+            instance.set_password(password)
+            instance.save()
+        return instance
 
