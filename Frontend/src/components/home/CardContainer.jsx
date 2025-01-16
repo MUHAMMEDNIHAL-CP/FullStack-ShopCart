@@ -2,7 +2,7 @@ import HomeCard from './HomeCard'
 
 const CardContainer = ({products}) => {
     return (
-        <section className="py-5" id='shop'>
+        <section className="py-4" id='shop'>
             <h4 style={{ textAlign: 'center' }}>Our Products</h4>
 
             <div className="container px-4 px-lg-5 mt-5" style={{ textAlign: 'center' }}>

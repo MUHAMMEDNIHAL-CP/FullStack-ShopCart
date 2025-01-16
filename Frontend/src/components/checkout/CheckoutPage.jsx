@@ -8,7 +8,7 @@ const CheckoutPage = () => {
 
 
   return (
-    <div className="container" style={{ margin: '100px' }}>
+    <div className="container" style={{ marginTop: '100px', marginBottom: '90px' }}>
         <div className="row">
             <OrderSummary cartitems={cartitems} cartTotal={cartTotal} tax={tax} />
             <PaymentSection />

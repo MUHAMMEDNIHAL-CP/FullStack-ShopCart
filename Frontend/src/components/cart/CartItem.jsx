@@ -72,12 +72,12 @@ const CartItem = ({item, setCartTotal, cartitems, setCartItems, setNumberCartIte
             <input
                type='number'
                min="1"
-               className='form-control me-3'
+               className='form-control me-1'
                value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
-               style={{ width: '70px' }}
+               style={{ width: '60px' }}
             />
-            <button className='btn btn-sm mx-2'
+            <button className='btn btn-sm mx-1'
             onClick={updateCartItem} 
             style={{backgroundColor: "#4b3bcb", color: "white"}} disabled={loading} >
               {loading ? "Updating": "Update"}
