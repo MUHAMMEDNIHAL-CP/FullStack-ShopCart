@@ -27,7 +27,7 @@ const CartSummary = ({cartTotal, tax}) => {
                 <br />
                 <Link to="/checkout">
                 <button
-                  className='btn btn-primary w-100'
+                  className='btn btn-primary mb-3 w-100'
                   style={{ backgroundColor: '#6050DC', borderColor: '#6050DC' }}
                 >
                     Proceed to Checkout

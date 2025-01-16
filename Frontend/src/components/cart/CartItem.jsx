@@ -53,9 +53,9 @@ const CartItem = ({item, setCartTotal, cartitems, setCartItems, setNumberCartIte
   }
 
   return (
-    <div className='col-md-12'>
+    <div className='col-md-12 m-0'>
         <div
-          className='cart-item d-flex align-items-center mb-3 p-3'
+          className='cart-item d-flex align-items-center mb-3 py-3'
           style={{ backgroundColor: '#f8f9fa', borderRadius: '8px '}}
         >
           <img
@@ -75,7 +75,7 @@ const CartItem = ({item, setCartTotal, cartitems, setCartItems, setNumberCartIte
                className='form-control me-1'
                value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
-               style={{ width: '60px' }}
+               style={{ width: '55px' }}
             />
             <button className='btn btn-sm mx-1'
             onClick={updateCartItem} 

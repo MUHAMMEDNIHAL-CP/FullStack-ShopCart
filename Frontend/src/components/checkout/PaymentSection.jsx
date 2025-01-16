@@ -37,7 +37,7 @@ const PaymentSection = () => {
     }
 
   return (
-    <div className='col-md-4'>
+    <div className='col-md-4 mt-3'>
         <div className={`card ${styles.card}`}>
             <div className="card-header" style={{ backgroundColor: '#6050DC', color: "white" }}>
                 <h5>Payment Opitions</h5>
