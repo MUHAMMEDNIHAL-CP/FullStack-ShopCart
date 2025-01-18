@@ -80,7 +80,7 @@ const ProductPage = ({setNumberCartItems}) => {
                             <div className="small mb-1">SKU: BST_498</div>
                             <h1 className="display-5 fw-bolder">{product.name}</h1>
                             <div className="fs-5 mb-5">
-                                <span>${product.price}</span>
+                                <span>₹{product.price}</span>
                             </div>
                             <p className="lead">{product.description}</p>
                             <div className="d-flex">

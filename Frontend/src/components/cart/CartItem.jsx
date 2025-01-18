@@ -75,7 +75,7 @@ const CartItem = ({item, setCartTotal, cartitems, setCartItems, setNumberCartIte
                className='form-control me-1'
                value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
-               style={{ width: '55px' }}
+               style={{ width: '60px' }}
             />
             <button className='btn btn-sm mx-1'
             onClick={updateCartItem} 
